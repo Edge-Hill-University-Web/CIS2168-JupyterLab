@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  CIS2168:
+    container_name: CIS2168-Data-Driven-Design
+    image: jupyter/base-notebook:python-3.11.4
+    user: root
+    environment:
+      - GRANT_SUDO="yes"
+    ports:
+      - '2168:8888'
+    volumes:
+      - ./CIS2168-Data-Driven-Design:/home/ehu/CIS2168
+    entrypoint: sh -c "jupyter lab --NotebookApp.password='2168' --NotebookApp.token='2168' --allow-root"
